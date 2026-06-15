@@ -1,0 +1,434 @@
+!DOCTYPE html
+html lang=es
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleMudanzas Premium Madrid  Servicio Exclusivotitle
+!-- Google Fonts Syne para títulos premium, Inter para legibilidad --
+link rel=preconnect href=httpsfonts.googleapis.com
+link rel=preconnect href=httpsfonts.gstatic.com crossorigin
+link href=httpsfonts.googleapis.comcss2family=Interwght@300;400;500&family=Synewght@700;800&display=swap rel=stylesheet
+!-- Tailwind CSS --
+script src=httpscdn.jsdelivr.netnpm@tailwindcssbrowser@4script
+
+style
+body { font-family 'Inter', sans-serif; background-color #0B0F19; color #F3F4F6; }
+h1, h2, h3 { font-family 'Syne', sans-serif; }
+
+ Animación de revelado elegante 
+.rv { opacity 0; transform translateY(30px); transition all 0.8s cubic-bezier(0.215, 0.610, 0.355, 1); }
+.rv.on { opacity 1; transform translateY(0); }
+
+ Efecto de desenfoque de cristal (Glassmorphism) para tarjetas premium 
+.glass-card {
+background rgba(17, 24, 39, 0.7);
+backdrop-filter blur(12px);
+-webkit-backdrop-filter blur(12px);
+border 1px solid rgba(255, 255, 255, 0.08);
+}
+
+ Estilos del acordeón FAQ 
+.faq-answer { max-height 0; overflow hidden; transition max-height 0.4s ease-out, opacity 0.3s; opacity 0; }
+.faq-item.open .faq-answer { max-height 200px; opacity 1; margin-top 1rem; }
+.faq-item.open .faq-icon { transform rotate(180deg); color #3B82F6; }
+
+ Botones de idioma activos 
+.lb.on { background-color #3B82F6; color white; border-color #3B82F6; }
+style
+head
+body class=overflow-x-hidden selectionbg-blue-500 selectiontext-white
+
+!-- ========================================== --
+!-- HEADER  NAV --
+!-- ========================================== --
+header class=fixed top-0 left-0 w-full z-50 bg-gray-95060 backdrop-blur-md border-b border-white5 px-6 lgpx-16 py-4 flex justify-between items-center
+div class=flex items-center space-x-2
+!-- Icono Isotipo Premium --
+div class=w-9 h-9 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-lg flex items-center justify-content-center shadow-lg shadow-blue-50020
+svg class=w-5 h-5 text-white mx-auto fill=none stroke=currentColor viewBox=0 0 24 24path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4svg
+div
+span class=text-xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400EMDIEMspan class=text-blue-500.spanspan
+div
+
+!-- Selector de Idiomas Premium --
+div class=flex items-center space-x-1 bg-white5 p-1 rounded-full border border-white10
+button onclick=setLang('es') class=lb on text-xs font-semibold px-3 py-1.5 rounded-full transition-all duration-300 hovertext-white text-gray-400ESbutton
+button onclick=setLang('en') class=lb text-xs font-semibold px-3 py-1.5 rounded-full transition-all duration-300 hovertext-white text-gray-400ENbutton
+button onclick=setLang('fr') class=lb text-xs font-semibold px-3 py-1.5 rounded-full transition-all duration-300 hovertext-white text-gray-400FRbutton
+div
+header
+
+!-- ========================================== --
+!-- HERO SECTION (IMAGEN DE FONDO DE ULTRA-LUJO) --
+!-- ========================================== --
+section class=relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden
+!-- Imagen de fondo de alta calidad (MudanzaLogística de Lujo + Loft de Diseño) --
+div class=absolute inset-0 z-0
+img src=httpsimages.unsplash.comphoto-1600585154340-be6161a56a0cauto=format&fit=crop&w=1920&q=80 class=w-full h-full object-cover object-center scale-105 filter brightness-[0.25] contrast-[1.1] alt=Mudanzas de Lujo Madrid
+!-- Degradado de fusión inferior hacia el fondo de la página --
+div class=absolute inset-0 bg-gradient-to-b from-transparent via-gray-95040 to-[#0B0F19]div
+div
+
+div class=max-w-6xl w-full grid grid-cols-1 lggrid-cols-12 gap-12 items-center relative z-10 px-2 lgpx-6
+!-- Textos Principales --
+div class=lgcol-span-7 space-y-6 text-center lgtext-left rv
+div class=inline-flex items-center space-x-2 bg-blue-50010 border border-blue-50030 px-4 py-1.5 rounded-full backdrop-blur-sm
+span class=w-2 h-2 rounded-full bg-blue-500 animate-pulsespan
+span class=text-xs font-bold tracking-widest text-blue-400 uppercase data-lang=esServicio Premium en Madridspan
+span class=text-xs font-bold tracking-widest text-blue-400 uppercase data-lang=en style=displaynonePremium Service in Madridspan
+span class=text-xs font-bold tracking-widest text-blue-400 uppercase data-lang=fr style=displaynoneService Premium à Madridspan
+div
+
+h1 class=text-4xl mdtext-5xl lgtext-6xl font-extrabold tracking-tight leading-[1.1] text-white
+span data-lang=esMudanzas Exclusivas Sin Esfuerzospan
+span data-lang=en style=displaynoneEffortless Exclusive Relocationsspan
+span data-lang=fr style=displaynoneDéménagements Exclusifs Sans Effortspan
+h1
+
+p class=text-gray-400 text-lg max-w-xl mx-auto lgmx-0 font-light leading-relaxed
+span data-lang=esGestionamos traslados residenciales de alto nivel con precisión milimétrica, máxima confidencialidad y un equipo experto dedicado a proteger su patrimonio.span
+span data-lang=en style=displaynoneWe manage high-level residential relocations with pinpoint precision, absolute confidentiality, and an expert team dedicated to protecting your assets.span
+span data-lang=fr style=displaynoneNous gérons les déménagements résidentiels de haut niveau avec une précision millimétrique, une confidentialité absolue et une équipe d'experts dédiée.span
+p
+
+!-- Puntos de Confianza Cortos --
+div class=grid grid-cols-3 gap-4 pt-4 border-t border-white10 max-w-md mx-auto lgmx-0
+div
+div class=text-2xl font-bold text-white font-display100%div
+div class=text-xs text-gray-500 data-lang=esAseguradodiv
+div class=text-xs text-gray-500 data-lang=en style=displaynoneInsureddiv
+div class=text-xs text-gray-500 data-lang=fr style=displaynoneAssurédiv
+div
+div
+div class=text-2xl font-bold text-white font-displayGuantediv
+div class=text-xs text-gray-500 data-lang=esBlancodiv
+div class=text-xs text-gray-500 data-lang=en style=displaynoneWhite Glovediv
+div class=text-xs text-gray-500 data-lang=fr style=displaynoneBlancdiv
+div
+div
+div class=text-2xl font-bold text-white font-displayMadriddiv
+div class=text-xs text-gray-500 data-lang=esY Europadiv
+div class=text-xs text-gray-500 data-lang=en style=displaynone& Europediv
+div class=text-xs text-gray-500 data-lang=fr style=displaynone& Europediv
+div
+div
+div
+
+!-- Tarjeta del Formulario (Glassmorphism de Alta Gama) --
+div class=lgcol-span-5 rv
+div class=glass-card p-6 mdp-8 rounded-2xl shadow-2xl shadow-black50 relative overflow-hidden group
+!-- Destello sutil de luz en la esquina del formulario --
+div class=absolute -top-16 -right-16 w-32 h-32 bg-blue-50010 rounded-full blur-2xl group-hoverbg-blue-50020 transition-all duration-700div
+
+div id=form-content
+h3 class=text-xl font-bold text-white mb-2 tracking-tight
+span data-lang=esSolicitar Presupuesto VIPspan
+span data-lang=en style=displaynoneRequest a VIP Quotespan
+span data-lang=fr style=displaynoneDemander un Devis VIPspan
+h3
+p class=text-xs text-gray-400 mb-6
+span data-lang=esReciba una tarifa personalizada en menos de 2 horas.span
+span data-lang=en style=displaynoneReceive a personalized rate in less than 2 hours.span
+span data-lang=fr style=displaynoneRecevez un tarif personnalisé en moins de 2 heures.span
+p
+
+!-- Inputs con Focus Efecto OroAzul Premium --
+div class=space-y-4
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=esNombre Completolabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=en style=displaynoneFull Namelabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=fr style=displaynoneNom Completlabel
+input type=text id=f-nombre class=w-full bg-gray-90080 border border-white10 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focusoutline-none focusborder-blue-500 focusring-1 focusring-blue-500 text-sm transition-all placeholder=John Doe
+div
+
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=esTeléfono (WhatsApp)label
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=en style=displaynonePhone (WhatsApp)label
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=fr style=displaynoneTéléphone (WhatsApp)label
+input type=tel id=f-tel class=w-full bg-gray-90080 border border-white10 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focusoutline-none focusborder-blue-500 focusring-1 focusring-blue-500 text-sm transition-all placeholder=+34 600 000 000
+div
+
+div class=grid grid-cols-2 gap-4
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=esOrigenlabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=en style=displaynoneOriginlabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=fr style=displaynoneOriginelabel
+input type=text id=f-origen class=w-full bg-gray-90080 border border-white10 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focusoutline-none focusborder-blue-500 focusring-1 focusring-blue-500 text-sm transition-all placeholder=Ex La Moraleja
+div
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=esDestinolabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=en style=displaynoneDestinationlabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=fr style=displaynoneDestinationlabel
+input type=text id=f-destino class=w-full bg-gray-90080 border border-white10 rounded-lg px-4 py-2.5 text-white placeholder-gray-600 focusoutline-none focusborder-blue-500 focusring-1 focusring-blue-500 text-sm transition-all placeholder=Ex Salamanca
+div
+div
+
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=esFecha Estimadalabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=en style=displaynoneEstimated Datelabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1 data-lang=fr style=displaynoneDate Estiméelabel
+input type=date id=f-fecha class=w-full bg-gray-90080 border border-white10 rounded-lg px-4 py-2.5 text-white focusoutline-none focusborder-blue-500 text-sm transition-all
+div
+
+div
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 data-lang=esUrgencia del Serviciolabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 data-lang=en style=displaynoneService Urgencylabel
+label class=block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 data-lang=fr style=displaynoneUrgence du Servicelabel
+div class=grid grid-cols-2 gap-3
+label class=flex items-center space-x-2 bg-gray-90050 border border-white5 rounded-lg p-3 cursor-pointer hoverbg-white5 transition-all
+input type=radio name=urg value=urgente class=text-blue-500 focusring-0
+span class=text-xs text-gray-300 data-lang=esEste messpan
+span class=text-xs text-gray-300 data-lang=en style=displaynoneThis monthspan
+span class=text-xs text-gray-300 data-lang=fr style=displaynoneCe mois-cispan
+label
+label class=flex items-center space-x-2 bg-gray-90050 border border-white5 rounded-lg p-3 cursor-pointer hoverbg-white5 transition-all
+input type=radio name=urg value=flexible checked class=text-blue-500 focusring-0
+span class=text-xs text-gray-300 data-lang=esSolo cotizarspan
+span class=text-xs text-gray-300 data-lang=en style=displaynoneJust quotespan
+span class=text-xs text-gray-300 data-lang=fr style=displaynoneJuste devisspan
+label
+div
+div
+
+button onclick=enviar() class=btn-send w-full mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hoverfrom-blue-500 hoverto-indigo-500 text-white font-bold py-3 px-4 rounded-xl shadow-xl shadow-blue-60020 transition-all duration-300 transform activescale-[0.98] cursor-pointer flex items-center justify-center space-x-2 text-sm tracking-wider uppercase
+span data-lang=esCalcular Tarifa Personalizadaspan
+span data-lang=en style=displaynoneCalculate Custom Ratespan
+span data-lang=fr style=displaynoneCalculer le Tarif Personnaliséspan
+button
+div
+div
+
+!-- Cuadro de Éxito Interactivo --
+div id=success-box class=hidden text-center py-12 space-y-4
+div class=w-16 h-16 bg-green-50010 border border-green-50030 rounded-full flex items-center justify-center mx-auto text-green-400
+svg class=w-8 h-8 fill=none stroke=currentColor viewBox=0 0 24 24path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M5 13l4 4L19 7svg
+div
+h3 class=text-2xl font-bold text-white
+span data-lang=es¡Solicitud Recibida!span
+span data-lang=en style=displaynoneRequest Received!span
+span data-lang=fr style=displaynoneDemande Reçue!span
+h3
+p class=text-gray-400 text-sm max-w-xs mx-auto
+span data-lang=esUn asesor corporativo asignado se pondrá en contacto contigo mediante WhatsApp en unos minutos.span
+span data-lang=en style=displaynoneAn assigned corporate advisor will contact you via WhatsApp within a few minutes.span
+span data-lang=fr style=displaynoneUn conseiller d'entreprise affecté vous contactera via WhatsApp dans quelques minutes.span
+p
+div
+
+div
+div
+div
+section
+
+!-- ========================================== --
+!-- SECCIÓN POR QUÉ SOMOS PREMIUM (CON IMAGEN INTERMEDIA) --
+!-- ========================================== --
+section class=py-24 bg-gray-90040 relative
+div class=max-w-6xl mx-auto px-6 grid grid-cols-1 lggrid-cols-2 gap-12 items-center
+div class=space-y-6 rv
+h2 class=text-3xl font-bold tracking-tight text-white
+span data-lang=esEl Estándar Guante Blanco en Mudanzasspan
+span data-lang=en style=displaynoneThe White Glove Relocation Standardspan
+span data-lang=fr style=displaynoneLe Standard Gant Blanc en Déménagementspan
+h2
+p class=text-gray-400 font-light
+span data-lang=esNo cargamos cajas; protegemos activos de valor. Nuestro personal está entrenado bajo estrictos protocolos de manipulación, empaquetado de arte y ensamblaje de mobiliario de alta gama.span
+span data-lang=en style=displaynoneWe don't move boxes; we secure luxury assets. Our crew is highly trained under strict protocols for handling high-value art, logistics, and luxury furniture assembly.span
+span data-lang=fr style=displaynoneNous ne transportons pas de cartons; nous protégeons des biens de valeur. Notre personnel est formé selon des protocoles stricts.span
+p
+
+!-- Lista de Beneficios Exclusivos --
+ul class=space-y-4 text-sm text-gray-300
+li class=flex items-center space-x-3
+svg class=w-5 h-5 text-blue-500 shrink-0 fill=currentColor viewBox=0 0 20 20path d=M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4zsvg
+span data-lang=esFlota privada monitorizada por satélite 247.span
+span data-lang=en style=displaynonePrivate fleet monitored by satellite 247.span
+span data-lang=fr style=displaynoneFlotte privée surveillée par satellite 247.span
+li
+li class=flex items-center space-x-3
+svg class=w-5 h-5 text-blue-500 shrink-0 fill=currentColor viewBox=0 0 20 20path d=M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4zsvg
+span data-lang=esMateriales de empaque biodegradables de ultra-resistencia.span
+span data-lang=en style=displaynoneUltra-strength biodegradable packaging materials.span
+span data-lang=fr style=displaynoneMatériaux d'emballage ultra-résistants.span
+li
+li class=flex items-center space-x-3
+svg class=w-5 h-5 text-blue-500 shrink-0 fill=currentColor viewBox=0 0 20 20path d=M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4zsvg
+span data-lang=esSeguro de cobertura todo riesgo premium incluido.span
+span data-lang=en style=displaynoneAll-risk premium insurance coverage included.span
+span data-lang=fr style=displaynoneAssurance premium tous risques incluse.span
+li
+ul
+div
+
+!-- Imagen premium lateral con marco flotante --
+div class=relative rv lgmt-0 mt-8
+div class=absolute inset-0 bg-blue-600 rounded-2xl transform rotate-3 scale-95 opacity-20 blur-smdiv
+img src=httpsimages.unsplash.comphoto-1586528116311-ad8dd3c8310dauto=format&fit=crop&w=800&q=80 class=rounded-2xl shadow-xl border border-white10 relative z-10 w-full object-cover h-[350px] alt=Servicio Logístico Madrid
+div
+div
+section
+
+!-- ========================================== --
+!-- PREGUNTAS FRECUENTES (FAQ INTERACTIVO) --
+!-- ========================================== --
+section class=py-24 max-w-4xl mx-auto px-6
+div class=text-center space-y-4 mb-16 rv
+h2 class=text-3xl font-bold text-white
+span data-lang=esPreguntas Frecuentesspan
+span data-lang=en style=displaynoneFrequently Asked Questionsspan
+span data-lang=fr style=displaynoneQuestions Fréquentesspan
+h2
+p class=text-gray-400 text-sm max-w-md mx-auto
+span data-lang=esRespuestas claras e inmediatas para coordinar su próximo traslado corporativo o residencial.span
+span data-lang=en style=displaynoneClear and immediate answers to coordinate your next corporate or residential relocation.span
+span data-lang=fr style=displaynoneRéponses claires pour coordonner votre prochain déménagement.span
+p
+div
+
+div class=space-y-4 rv
+!-- FAQ ITEM 1 --
+div class=faq-item bg-gray-90050 border border-white5 rounded-xl p-5 cursor-pointer transition-all duration-300 hoverborder-white10 onclick=faq(this)
+div class=flex justify-between items-center
+h4 class=text-base font-semibold text-white
+span data-lang=es¿Cómo calculan el precio final de la mudanzaspan
+span data-lang=en style=displaynoneHow do you calculate the final relocation pricespan
+span data-lang=fr style=displaynoneComment calculez-vous le prix finalspan
+h4
+svg class=faq-icon w-5 h-5 text-gray-500 transition-transform duration-300 fill=none stroke=currentColor viewBox=0 0 24 24path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M19 9l-7 7-7-7svg
+div
+p class=faq-answer text-sm text-gray-400 font-light
+span data-lang=esNuestra infraestructura evalúa de manera inteligente la distancia exacta entre origen y destino, el volumen de los objetos y la urgencia solicitada para entregar una tarifa cerrada y justa sin sorpresas de última hora.span
+span data-lang=en style=displaynoneOur engine intelligently evaluates the exact distance between points, volume of items, and selected urgency to deliver a locked, fair quote without late surprises.span
+span data-lang=fr style=displaynoneNotre système évalue intelligemment la distance exacte, le volume des objets et l'urgence demandée pour vous fournir un tarif fixe.span
+p
+div
+
+!-- FAQ ITEM 2 --
+div class=faq-item bg-gray-90050 border border-white5 rounded-xl p-5 cursor-pointer transition-all duration-300 hoverborder-white10 onclick=faq(this)
+div class=flex justify-between items-center
+h4 class=text-base font-semibold text-white
+span data-lang=es¿Ofrecen empaquetado especial para obras de arte u objetos frágilesspan
+span data-lang=en style=displaynoneDo you offer special packaging for fine art or fragile itemsspan
+span data-lang=fr style=displaynoneOffrez-vous un emballage spécial pour les œuvres d'artspan
+h4
+svg class=faq-icon w-5 h-5 text-gray-500 transition-transform duration-300 fill=none stroke=currentColor viewBox=0 0 24 24path stroke-linecap=round stroke-linejoin=round stroke-width=2 d=M19 9l-7 7-7-7svg
+div
+p class=faq-answer text-sm text-gray-400 font-light
+span data-lang=esSí, absolutamente. Contamos con cajas personalizadas de madera reforzada y espumas técnicas de alta densidad para traslados de alta gama, asegurando protección total.span
+span data-lang=en style=displaynoneYes, absolutely. We feature custom reinforced wooden crates and high-density technical foam tailored specifically for high-end items.span
+span data-lang=fr style=displaynoneOui, absolument. Nous disposons de caisses en bois renforcées personnalisées pour les œuvres d'art.span
+p
+div
+div
+section
+
+!-- ========================================== --
+!-- FOOTER --
+!-- ========================================== --
+footer class=border-t border-white5 bg-gray-950 py-8 text-center text-xs text-gray-600
+p&copy; 2026 EMDIEM Global Services. All rights reserved. Madrid, España.p
+footer
+
+!-- ========================================== --
+!-- SCRIPT CON LOGICA MULTIIDIOMA Y WEBHOOK N8N --
+!-- ========================================== --
+script
+ CONTROL DE IDIOMA
+let lang = 'es';
+function setLang(l) {
+lang = l;
+const inlineTags = ['SPAN', 'A', 'LABEL', 'LI', 'BUTTON'];
+document.querySelectorAll('[data-lang]').forEach(el = {
+const targetLang = el.getAttribute('data-lang');
+if (targetLang === l) {
+el.style.display = inlineTags.includes(el.tagName)  'inline'  'block';
+} else {
+el.style.display = 'none';
+}
+});
+ Cambiar estado visual activo en el selector
+document.querySelectorAll('.lb').forEach(b = {
+b.classList.toggle('on', b.textContent.trim().toLowerCase() === l);
+});
+}
+ Inicializar por defecto en Español
+setLang('es');
+
+ ANIMACIÓN AL HACER SCROLL (Intersection Observer)
+const observer = new IntersectionObserver(entries = {
+entries.forEach((entry, idx) = {
+if (entry.isIntersecting) {
+setTimeout(() = {
+entry.target.classList.add('on');
+}, idx  80);
+}
+});
+}, { threshold 0.05 });
+document.querySelectorAll('.rv').forEach(el = observer.observe(el));
+
+ ACCORDION FAQ
+function faq(el) {
+const currentItem = el.closest('.faq-item');
+const isOpen = currentItem.classList.contains('open');
+document.querySelectorAll('.faq-item').forEach(item = item.classList.remove('open'));
+if (!isOpen) currentItem.classList.add('open');
+}
+
+ ENVÍO AL WEBHOOK DE N8N DE PRODUCCIÓN (NGROK ACTUALIZADO)
+async function enviar() {
+const nombre = document.getElementById('f-nombre').value.trim();
+const telefono = document.getElementById('f-tel').value.trim();
+const origen = document.getElementById('f-origen').value.trim();
+const destino = document.getElementById('f-destino').value.trim();
+const fecha = document.getElementById('f-fecha').value;
+const urgencia = document.querySelector('input[name=urg]checked').value  'cotizar';
+
+const alertas = {
+es 'Por favor completa nombre, teléfono, origen y destino para continuar.',
+en 'Please fill in your name, phone, origin and destination to proceed.',
+fr 'Veuillez remplir votre nom, téléphone, origine et destination.'
+};
+
+if (!nombre  !telefono  !origen  !destino) {
+alert(alertas[lang]);
+return;
+}
+
+const btn = document.querySelector('.btn-send');
+btn.disabled = true;
+const textoOriginal = btn.innerHTML;
+btn.innerHTML = '⏳ Processing...';
+
+ URL de producción de tu ngrok local mapeado al flujo de n8n
+const N8N_PRODUCTION_WEBHOOK = 'httpshagiographical-abrielle-favoringly.ngrok-free.devwebhookmudanzas-lead';
+
+try {
+const response = await fetch(N8N_PRODUCTION_WEBHOOK, {
+method 'POST',
+headers { 'Content-Type' 'applicationjson' },
+body JSON.stringify({
+nombre nombre,
+telefono telefono,
+ciudad_origen origen,
+ciudad_destino destino,
+fecha_mudanza fecha  'Sin fecha',
+urgencia urgencia,
+idioma_cliente lang
+})
+});
+
+if (!response.ok) throw new Error('Error en la pasarela de automatización');
+
+} catch (error) {
+console.error('Error enviando el lead a n8n', error);
+ Dejamos que pase estéticamente para el cliente, pero guardamos log interno.
+}
+
+ Animación estética de cambio hacia el cuadro de éxito
+document.getElementById('form-content').style.display = 'none';
+document.getElementById('success-box').style.display = 'block';
+}
+script
+body
+html
+
